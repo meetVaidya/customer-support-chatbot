@@ -2,11 +2,7 @@ import { GoogleGenerativeAI, GenerativeModel, ChatSession } from '@google/genera
 import { GoogleGenerativeAIStream, Message, StreamingTextResponse } from 'ai';
 
 // Check for the API key at the start
-if (!process.env.GOOGLE_API_KEY) {
-    throw new Error('Missing GOOGLE_API_KEY environment variable');
-}
-
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || '');
 
 // Specify that this route should be processed at the edge
 export const runtime = 'edge';
