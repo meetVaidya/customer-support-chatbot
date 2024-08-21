@@ -29,7 +29,7 @@ export async function POST(req: Request) {
         }
 
         // Get the Gemini Pro model
-        const model: GenerativeModel = genAI.getGenerativeModel({ model: 'gemini-pro' });
+        const model: GenerativeModel = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
         // Convert messages to Gemini format, including the system message
         const geminiMessages = [
